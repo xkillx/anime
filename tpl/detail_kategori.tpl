@@ -1,3 +1,11 @@
+<?php
+global $anime;
+global $kategori_id;
+$detail = $anime->kategoriDetail($kategori_id);
+?>
+<pre>
+	<?php print_r($detail);?>
+</pre>
 <div class="row">
 	<div class="col-sm-3">
 		<img src="static/img/contoh.jpg" class="img-responsive img-thumbnail" alt="Responsive image"  style="width:100%;margin-bottom:10px;" >
@@ -11,15 +19,19 @@
 		  	<tbody>
 		  		<tr>
 		  			<td>English</td>
-		  			<td>Fate/stay night [Unlimited Blade Works] (2015)</td>
+		  			<td><?php echo $detail->english;?></td>
 		  		</tr>
 		  		<tr>
 		  			<td>Synonyms</td>
-		  			<td>Fate/stay night (2015), Fate - Stay Night</td>
+		  			<td><?php echo $detail->synonyms;?></td>
 		  		</tr>
 		  		<tr>
 		  			<td>Japanese</td>
-		  			<td>Fate/stay night [Unlimited Blade Works] 2nd シーズン</td>
+		  			<td><?php echo $detail->japanese;?></td>
+		  		</tr>
+		  		<tr>
+		  			<td>Indonesian</td>
+		  			<td><?php echo $detail->indonesian;?></td>
 		  		</tr>
 		  	</tbody>
 		  </table>
@@ -34,31 +46,31 @@
 		  	<tbody>
 		  		<tr>
 		  			<td>Type</td>
-		  			<td>TV</td>
+		  			<td><?php echo $detail->type;?></td>
 		  		</tr>
 		  		<tr>
 		  			<td>Episodes</td>
-		  			<td>13</td>
+		  			<td>-</td>
 		  		</tr>
 		  		<tr>
 		  			<td>Status</td>
-		  			<td>Finished Airing</td>
+		  			<td><?php echo $detail->status;?></td>
 		  		</tr>
 		  		<tr>
 		  			<td>Aired</td>
-		  			<td>Apr 5, 2015 to Jun 28, 2015</td>
+		  			<td>-</td>
 		  		</tr>
 		  		<tr>
 		  			<td>Producers</td>
-		  			<td> Aniplex, ufotable, Aniplex of AmericaL, Notes</td>
+		  			<td><?php echo $detail->producers;?></td>
 		  		</tr>
 		  		<tr>
 		  			<td>Genres</td>
-		  			<td> Action, Fantasy, Magic, Shounen, Supernatural</td>
+		  			<td><?php echo $detail->genres;?></td>
 		  		</tr>
 		  		<tr>
 		  			<td>Duration</td>
-		  			<td> 23 min. per episode</td>
+		  			<td><?php echo $detail->duration;?></td>
 		  		</tr>
 		  	</tbody>
 		  </table>
@@ -82,17 +94,7 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="details">
-<h3>Synopsis</h3>
-<p>
-Fuyuki City—a city surrounded by the ocean and the mountains becomes the setting for an age-old ritual. To realize the mythical Holy Grail, which is said to grant any wish from its possessor, seven masters are given seven heroic spirits chosen by the Grail. These heroic spirits or servants are: Saber, Lancer, Archer, Rider, Caster, Assassin, Berserker.
-</p>
-<p>
-Each master will enter into a contract with their assigned servants and battle the other masters and servants to the death until only one pair remains...
-</p>
-<p>
-This is the "Holy Grail War."
-</p>
-(Source: <a href="" class="external">Aniplex USA</a>)
+<?php echo $detail->keterangan;?>
     </div>
     <div role="tabpanel" class="tab-pane" id="Episodes">
     	<table class="table table-striped table-bordered  table-condensed">

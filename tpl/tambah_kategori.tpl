@@ -35,15 +35,19 @@
 
   <div class="form-group">
     <label for="English">English</label>
-    <input type="text" class="form-control" id="English" placeholder="English" required>
+    <input type="text" class="form-control" id="English" name="english" placeholder="English" required>
   </div>
   <div class="form-group">
     <label for="Synonyms">Synonyms</label>
-    <input type="text" class="form-control" id="Synonyms" placeholder="Synonyms" required>
+    <input type="text" class="form-control" id="Synonyms" name="synonyms" placeholder="Synonyms" required>
   </div>
   <div class="form-group">
     <label for="Japanese">Japanese</label>
-    <input type="text" class="form-control" id="Japanese" placeholder="Japanese" required>
+    <input type="text" class="form-control" id="Japanese" name="japanese" placeholder="Japanese" required>
+  </div>
+  <div class="form-group">
+    <label for="Indonesian">Indonesian</label>
+    <input type="text" class="form-control" id="Indonesian" name="indonesian" placeholder="Indonesian" required>
   </div>
 
 
@@ -60,34 +64,34 @@
 
   <div class="form-group">
     <label for="Type">Type</label>
-    <input type="text" class="form-control" id="Type" placeholder="Type" required>
+    <input type="text" class="form-control" id="Type" name="type" placeholder="Type" required>
   </div>
   <div class="form-group">
     <label for="Episodes">Episodes</label>
-    <input type="text" class="form-control" id="Episodes" placeholder="Episodes" required>
+    <input type="text" class="form-control" id="Episodes" name="episode" placeholder="Episodes" required>
   </div>
   <div class="form-group">
     <label for="Status">Status</label>
-      <select id="Status" class="form-control">
+      <select name="status" id="Status" class="form-control">
         <option value="Finished Airing">Finished Airing</option>
         <option value="On Going">On Going</option>
       </select>
   </div>
   <div class="form-group">
     <label for="Aired">Aired</label>
-    <input type="text" class="form-control" id="Aired" placeholder="Aired" required>
+    <input type="text" class="form-control" id="Aired" name="aired" placeholder="Aired" required>
   </div>
   <div class="form-group">
     <label for="Producers">Producers</label>
-    <input type="text" class="form-control" id="Producers" placeholder="Producers" required>
+    <input type="text" class="form-control" id="Producers" name="producers"  placeholder="Producers" required>
   </div>
   <div class="form-group">
     <label for="Genres">Genres</label>
-    <input type="text" class="form-control" id="Genres" placeholder="Genres" required>
+    <input type="text" class="form-control" id="Genres" name="genres" placeholder="Genres" required>
   </div>
   <div class="form-group">
     <label for="Duration">Duration</label>
-    <input type="text" class="form-control" id="Duration" placeholder="Duration" required>
+    <input type="text" class="form-control" id="Duration" name="duration" placeholder="Duration" required>
   </div>
 
         </div>

@@ -18,29 +18,78 @@ class anime
 		$keterangan = $post['keterangan'];
 		$cover 		= $post['cover'];
 		$year 		= $post['year'];
+		$type 		= $post['type'];
+		$status 	= $post['status'];
+		$producers 	= $post['producers'];
+		$genres 	= $post['genres'];
+		$duration 	= $post['duration'];
+		$english 	= $post['english'];
+		$synonyms 	= $post['synonyms'];
+		$japanese 	= $post['japanese'];
+		$indonesian = $post['indonesian'];
+		$hit 		= '1';
 		$query = "INSERT INTO `kategori` 
 		(
 			`judul`, 
 			`keterangan`, 
 			`cover`, 
-			`year`
+			`year`, 
+			`type`, 
+			`status`, 
+			`producers`, 
+			`genres`, 
+			`duration`, 
+			`english`, 
+			`synonyms`, 
+			`japanese`, 
+			`indonesian`, 
+			`hit`
 		)
 		VALUES 
 		(
 			:judul, 
 			:keterangan, 
 			:cover, 
-			:year
+			:year, 
+			:type, 
+			:status, 
+			:producers, 
+			:genres, 
+			:duration, 
+			:english, 
+			:synonyms, 
+			:japanese, 
+			:indonesian, 
+			:hit
 		);";
 		$this->obj->query($query);
 		$this->obj->bind(':judul',$judul);
 		$this->obj->bind(':keterangan',$keterangan);
 		$this->obj->bind(':cover',$cover);
 		$this->obj->bind(':year',$year);
+		$this->obj->bind(':type',$type);
+		$this->obj->bind(':status',$status);
+		$this->obj->bind(':producers',$producers);
+		$this->obj->bind(':genres',$genres);
+		$this->obj->bind(':duration',$duration);
+		$this->obj->bind(':english',$english);
+		$this->obj->bind(':synonyms',$synonyms);
+		$this->obj->bind(':japanese',$japanese);
+		$this->obj->bind(':indonesian',$indonesian);
+		$this->obj->bind(':hit',$hit);
 		$this->obj->execute();
 		header("Location: ./?halaman=tambah_kategori");
 	}
 
+	public function kategoriDetail($kategori_id)
+	{
+		$query = "SELECT * FROM kategori WHERE id = :kategori_id";
+		$this->obj->query($query);
+		$this->obj->bind(':kategori_id',$kategori_id);
+		$this->obj->execute();
+		$rows = $this->obj->single();
+		return $rows;
+	}
 
 	public function semua_kategori()
 	{

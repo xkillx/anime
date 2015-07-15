@@ -4,7 +4,7 @@ session_start();
 
 
 $page 				= 	isset($_GET['page']) ? ((int) $_GET['page']) : 1;
-
+$kategori_id 		= 	isset($_GET['kategori_id']) ? ((int) $_GET['kategori_id']) : 0;
 
 require_once "config/PasswordHash.php";
 require_once "config/server.conf.php";
