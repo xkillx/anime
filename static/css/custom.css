@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'fira';
+  font-style: normal;
+  font-weight: normal;
+  src: local('fira'), url('static/font/fira-sans/FiraSans-Regular.otf') format('truetype');
+}
+body { padding-top: 40px; font-family: fira;}
+*{
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+	text-align: left;
+}
+.list-group {
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+.thumbnail img{
+	max-height: 150px;
+}
+span#sizing-addon2{
+	min-width: 110px;
+	text-align: right;
+}
+.input-group{
+	margin-top: 5px;
+}
+ .external {
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(transparent, transparent), url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%3E%3Cg%20transform%3D%22translate%28-826.429%20-698.791%29%22%3E%3Crect%20width%3D%225.982%22%20height%3D%225.982%22%20x%3D%22826.929%22%20y%3D%22702.309%22%20fill%3D%22%23fff%22%20stroke%3D%22%2306c%22%2F%3E%3Cg%3E%3Cpath%20d%3D%22M831.194%20698.791h5.234v5.391l-1.571%201.545-1.31-1.31-2.725%202.725-2.689-2.689%202.808-2.808-1.311-1.311z%22%20fill%3D%22%2306f%22%2F%3E%3Cpath%20d%3D%22M835.424%20699.795l.022%204.885-1.817-1.817-2.881%202.881-1.228-1.228%202.881-2.881-1.851-1.851z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    padding-right: 13px;
+}
+.tab-content{
+  margin-top: 10px;
+}
+.nav > li > a {
+    padding: 5px 10px;
+}
+.navbar-brand {
+    float: left;
+    height: auto;
+    padding: 5px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.navbar {
+    min-height: 0;
+}
