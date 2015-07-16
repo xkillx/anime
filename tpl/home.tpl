@@ -6,8 +6,8 @@
 <div class="clearfix" style="height:20px;"></div>
 <div class="row">
 <!-- -->
-	<div class="col-sm-4">
-		<div class="panel panel-default">
+	<div class="col-sm-3">
+		<div class="panel panel-danger">
 		  <div class="panel-heading"><i class="glyphicon glyphicon-fire"></i> Anime baru</div>
 			<div class="list-group">
 			  <a href="#" class="list-group-item">Buddy Complex: Kanketsu-hen - Ano Sora ni Kaeru Mirai de</a>
@@ -22,8 +22,8 @@
 
 
 <!-- -->
-	<div class="col-sm-4">
-		<div class="panel panel-default">
+	<div class="col-sm-3">
+		<div class="panel panel-success">
 		  <div class="panel-heading"><i class="glyphicon glyphicon-star"></i> Anime Populer</div>
 			<div class="list-group">
 			  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
@@ -38,9 +38,9 @@
 
 
 <!-- -->
-	<div class="col-sm-4">
-		<div class="panel panel-default">
-		  <div class="panel-heading"><i class="glyphicon glyphicon-calendar"></i> Anime Seasonal</div>
+	<div class="col-sm-3">
+		<div class="panel panel-primary">
+		  <div class="panel-heading"><i class="glyphicon glyphicon-star"></i> Anime Populer</div>
 			<div class="list-group">
 			  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
 			  <a href="#" class="list-group-item">Morbi leo risus</a>
@@ -51,4 +51,24 @@
 		</div>
 	</div>
 <!-- -->
+
+
+<!-- -->
+	<div class="col-sm-3">
+		<div class="panel panel-info">
+		  <div class="panel-heading"><i class="glyphicon glyphicon-bullhorn"></i> Site Update</div>
+			<div class="list-group">
+			  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+			  <a href="#" class="list-group-item">Morbi leo risus</a>
+			  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+			  <a href="#" class="list-group-item">Vestibulum at eros</a>
+			  <a href="#" class="list-group-item">Vestibulum at eros</a>
+			</div>
+		</div>
+	</div>
+<!-- -->
+
+
+
+
 </div>

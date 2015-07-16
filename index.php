@@ -31,7 +31,13 @@ echo $tpl->render("tpl/header.tpl");
 if(	isset($_GET['halaman'])	):
 	$halaman = $_GET['halaman'];
 	$halaman = "tpl/{$halaman}.tpl";
+	if(file_exists($halaman)):
 	echo $tpl->render($halaman);
+	else:
+		echo "
+		<div class=\"alert alert-danger\"> <strong>Warning</strong> <br>File <code>{$halaman}</code> is not axists!</div>
+		";
+	endif;
 else:
 echo $tpl->render("tpl/home.tpl");
 endif;

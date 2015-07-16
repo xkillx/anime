@@ -34,9 +34,13 @@ $seoname = preg_replace('/[\-]+$/','',$seoname); // // Strip off the ending hyph
 $seoname = strtolower($seoname);
 ?>
 	<tr>
-		<td><a href="./?halaman=detail_kategori&kategori_id=<?php echo $item->id;?>&kategori_judul=<?php echo $seoname;?>"><?php echo $item->judul;?></a></td>
+		<td><a href="./?halaman=detail_kategori&kategori_id=<?php echo $item->id;?>&kategori_judul=<?php echo $seoname;?>&short=<?php echo getgoogl("http://localhost/anime/?halaman=detail_kategori&kategori_id={$item->id}&kategori_judul={$seoname}");?>"><?php echo $item->judul;?></a></td>
 		<td><?php echo $item->year;?></td>
-		<td>10</td>
+		<td>
+		<?php 
+		echo $anime->jumlahEpisode($item->id);
+		?>
+		</td>
 	</tr>
 <?php endforeach;?>
 	</tbody>

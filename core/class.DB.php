@@ -74,6 +74,9 @@ public function endTransaction(){
 public function cancelTransaction(){
     return $this->dbh->rollBack();
 }
+public function lastInsertId(){
+    return $this->dbh->lastInsertId();
+}
 public function debugDumpParams(){
     return $this->stmt->debugDumpParams();
 }

@@ -2,14 +2,30 @@
 global $anime;
 global $kategori_id;
 $detail = $anime->kategoriDetail($kategori_id);
+$listEpisodes = $anime->semuaEpisode($kategori_id);
 ?>
-<pre>
-	<?php print_r($detail);?>
-</pre>
 <div class="row">
 	<div class="col-sm-3">
-		<img src="static/img/contoh.jpg" class="img-responsive img-thumbnail" alt="Responsive image"  style="width:100%;margin-bottom:10px;" >
+		<img src="<?php echo $detail->cover;?>" class="img-responsive img-thumbnail" alt="Responsive image"  style="width:100%;margin-bottom:10px;" >
 
+		<!-- -->
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Share Is care</h3>
+		  </div>
+		  <div class="panel-body">
+			  <a href="" class="btn btn-lg btn-primary">
+			  	<i class="fa fa-facebook"></i>
+			  </a>
+			  <a href="" class="btn btn-lg btn-success">
+			  	<i class="fa fa-twitter"></i>
+			  </a>
+			  <a href="" class="btn btn-lg btn-danger">
+			  	<i class="fa fa-google-plus"></i>
+			  </a>
+		  </div>
+		</div>
+		<!-- -->
 		<!-- -->
 		<div class="panel panel-default">
 		  <div class="panel-heading">
@@ -79,7 +95,7 @@ $detail = $anime->kategoriDetail($kategori_id);
 
 	</div>
 	<div class="col-sm-9">
-	<h4><i class="glyphicon glyphicon-bookmark"></i> Fate/stay night [Unlimited Blade Works] 2nd シーズン</h4>
+	<h4><i class="glyphicon glyphicon-bookmark"></i> <?php echo $detail->judul;?></h4>
 	<hr>
 		<div>
 
@@ -101,22 +117,28 @@ $detail = $anime->kategoriDetail($kategori_id);
     		<thead>
     			<tr>
     				<th>Title</th>
+    				<th>Date Add</th>
     				<th>Kualitas</th>
     				<th>Size</th>
     				<th>Source</th>
     				<th>Mirror</th>
+    				<th>Password</th>
+    				<th></th>
     			</tr>
     		</thead>
     		<tbody>
-    		<?php for ($i=1; $i <= 13 ; $i++):?>
+    		<?php foreach ($listEpisodes as $episode):?>
     			<tr>
-    				<td>Episode <?php echo $i;?></td>
-    				<td>720p</td>
-    				<td>1gb</td>
-    				<td>kumpulbagi</td>
-    				<td><a href="" class="external">Download</a></td>
+    				<td><?php echo $episode->title;?></td>
+    				<td><?php echo $episode->date;?></td>
+    				<td><?php echo $episode->kualitas;?></td>
+    				<td><?php echo $episode->size;?></td>
+    				<td><?php echo $episode->source;?></td>
+    				<td><a href="<?php echo $episode->mirror;?>" class="external">Download</a></td>
+    				<td><?php echo $episode->password;?></td>
+    				<td><a href="">Broken Link?</a></td>
     			</tr>
-    		<?php endfor;?>
+    		<?php endforeach;?>
     		</tbody>
     	</table>
     	<div class="alert alert-info">

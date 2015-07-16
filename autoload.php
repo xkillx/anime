@@ -11,6 +11,6 @@ function core($class) {
 
 spl_autoload_register('core');
 
-
+require_once "core/functions.php";
 ?>
 
