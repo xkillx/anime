@@ -5,7 +5,9 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-<div class="bg-white" style="padding:5px;">
+<div class="bg-white" style="padding:5px;border-color: rgb(204, 206, 211) rgb(196, 198, 202) rgb(180, 182, 186);
+border-style: solid;
+border-width: 1px;">
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
