@@ -22,8 +22,6 @@ class link
 		return $rows;
 	}
 
-
-
 	public function LinkName($link_id)
 	{
 		$query = "SELECT * FROM `link` WHERE `id` = :link_id";
@@ -32,6 +30,27 @@ class link
 		$this->obj->execute();
 		$datas		=	$this->obj->single();
 		return $datas->name;
+	}
+
+	public function tambah_link($post)
+	{
+		$name 	= $post['name'];
+		$url 	= $post['url'];
+		$query 	= "INSERT INTO `link` 
+		(
+			`name`, 
+			`url`
+		)
+		VALUES 
+		(
+			:name, 
+			:url
+		);";
+		$this->obj->query($query);
+		$this->obj->bind(':name',$name);
+		$this->obj->bind(':url',$url);
+		$this->obj->execute();
+		header("Location:./?halaman=link");
 	}
 
 }

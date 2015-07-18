@@ -8,6 +8,12 @@ else:
 	$session_group = $_SESSION['group'];
 endif;
 
+if( empty($_SESSION['pengguna_id'])):
+	$pengguna_id = 0;
+else:
+	$pengguna_id = $_SESSION['pengguna_id'];
+endif;
+
 $page 				= 	isset($_GET['page']) ? ((int) $_GET['page']) : 1;
 $kategori_id 		= 	isset($_GET['kategori_id']) ? ((int) $_GET['kategori_id']) : 0;
 
@@ -23,6 +29,7 @@ $pengaturan		=	new pengaturan($obj);
 $group			=	new group($obj);
 $link			=	new link($obj);
 $menu			=	new menu($obj);
+$pengguna		=	new pengguna($obj);
 
 
 if( isset($_POST['tambah_kategori'])):
@@ -34,8 +41,20 @@ if( isset($_POST['tambah_episode'])):
 	$anime->tambah_episode($_POST);
 endif;
 
+if( isset($_POST['tambah_link'])):
+	$link->tambah_link($_POST);
+endif;
+
 if( isset($_POST['tambah_menu'])):
 	$menu->tambah_menu($_POST);
+endif;
+
+if( isset($_POST['tambah_pengguna'])):
+	$pengguna->tambah_pengguna($_POST);
+endif;
+
+if( isset($_POST['valid_pengguna'])):
+	echo $pengguna->valid_pengguna($_POST);
 endif;
 
 echo $tpl->render("tpl/header.tpl");

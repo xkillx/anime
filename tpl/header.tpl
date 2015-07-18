@@ -1,4 +1,4 @@
-<!DOCTYPE html><?php global $session_group;?>
+<!DOCTYPE html><?php global $session_group;global $pengguna_id;global $pengguna;?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -49,29 +49,22 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><i class="glyphicon glyphicon-bullhorn"></i> Site Update</a></li>
-        <?php if($session_group == 3):?>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Master <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="./?halaman=tambah_kategori">Tambah Kategori</a></li>
-            <li><a href="./?halaman=tambah_episode">Tambah Episode</a></li>
-            <li><a href="./?halaman=tambah_ost">Tambah OST</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pengaturan <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="./?halaman=group">Group</a></li>
-            <li><a href="./?halaman=menu">Menu</a></li>
-            <li><a href="./?halaman=link">Link</a></li>
-          </ul>
-        </li>
-      <?php endif;?>
 
       
         <?php if($session_group == 2):?>
         <li><a href="./?halaman=login">Masuk</a></li>
         <li><a href="./?halaman=register">Daftar</a></li>
+        <?php endif;?>
+
+
+        <?php if($pengguna_id != 0):?>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $pengguna->penggunaName($pengguna_id);?> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="./?halaman=profile">Profile</a></li>
+            <li><a href="./logout.php">Keluar</a></li>
+          </ul>
+        </li>
         <?php endif;?>
       </ul>
     </div><!-- /.navbar-collapse -->

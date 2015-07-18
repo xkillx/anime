@@ -8,16 +8,16 @@
   </div>
   <div class="panel-body">
     
-<form>
+<form method="POST" action="./?halaman=register">
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" name="username" placeholder="username">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="password">
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <input type="submit" class="btn btn-default" name="tambah_pengguna" value="register">
 </form>
 
   </div>

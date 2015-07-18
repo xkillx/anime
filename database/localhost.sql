@@ -112,7 +112,15 @@ INSERT INTO `link` (`id`, `name`, `url`, `seq`) VALUES
 (9,	'Tos',	'/?halaman=tos',	''),
 (10,	'Home',	'/?',	''),
 (11,	'Login',	'/?halaman=login',	''),
-(12,	'Register',	'/?halaman=register',	'');
+(12,	'Register',	'/?halaman=register',	''),
+(13,	'Profile',	'/?halaman=profile',	''),
+(14,	'Tambah Menu',	'/?halaman=menu',	''),
+(15,	'Detail Kategori',	'/?halaman=detail_kategori',	''),
+(16,	'Link',	'/?halaman=link',	''),
+(17,	'Edit Cover',	'/?halaman=edit_cover',	''),
+(18,	'Edit Password',	'/?halaman=edit_password',	''),
+(19,	'Edit Profile',	'/?halaman=edit_profile',	''),
+(20,	'Group',	'/?halaman=group',	'');
 
 DROP TABLE IF EXISTS `menu`;
 CREATE TABLE `menu` (
@@ -126,7 +134,35 @@ INSERT INTO `menu` (`id`, `group_id`, `link_id`) VALUES
 (6,	2,	9),
 (7,	2,	5),
 (8,	2,	11),
-(9,	2,	12);
+(9,	2,	12),
+(10,	3,	13),
+(11,	3,	14),
+(12,	3,	1),
+(13,	3,	2),
+(14,	3,	3),
+(15,	3,	5),
+(16,	3,	6),
+(17,	3,	7),
+(18,	3,	8),
+(19,	3,	9),
+(20,	3,	15),
+(21,	2,	15),
+(22,	2,	5),
+(23,	1,	5),
+(24,	1,	15),
+(25,	1,	13),
+(26,	1,	6),
+(27,	1,	7),
+(28,	1,	8),
+(29,	1,	9),
+(30,	3,	16),
+(31,	1,	17),
+(32,	1,	18),
+(33,	1,	19),
+(34,	3,	17),
+(35,	3,	18),
+(36,	3,	19),
+(37,	3,	20);
 
 DROP TABLE IF EXISTS `ost`;
 CREATE TABLE `ost` (
@@ -180,6 +216,9 @@ CREATE TABLE `pengguna` (
   KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `pengguna` (`id`, `username`, `password`, `fname`, `lname`, `nice_name`, `yahoo`, `gmail`, `whatsapp`, `bbm`, `line`, `skype`, `group`, `token`) VALUES
+(2,	'angga',	'sha256:1000:PnduXCTCi1YLlp+Tv67FcPKIopjb3pzS:q6m1uY5JjGOZFiRX8gC7aBRvEYH0R4ug',	'',	'',	'Angga Purnama',	'-',	'-',	'-',	'-',	'-',	'-',	3,	''),
+(3,	'root',	'sha256:1000:BTmuE1NMvUjY4t/mQLDtad6N9MJ2A/Wq:EGHI2FKGTdsyAsekQRw6D3YBzr0b0MlU',	'',	'',	'',	'-',	'-',	'-',	'-',	'-',	'-',	1,	'');
 
 DROP TABLE IF EXISTS `update`;
 CREATE TABLE `update` (
@@ -191,4 +230,4 @@ CREATE TABLE `update` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- 2015-07-18 05:17:33
+-- 2015-07-18 09:50:00

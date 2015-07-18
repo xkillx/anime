@@ -53,7 +53,11 @@ class menu
 		foreach($datas as $data):
 			$group[] = $data->link_id; 
 		endforeach;
+		if(empty($group)):
+		$hgroup = 0;
+		else:
 		$hgroup = count($group);
+		endif;
 		if($hgroup >= 1):
 			$query = "SELECT *FROM `link`WHERE id IN(".implode(",", $group).") AND url = :url";
 			$this->obj->query($query);
