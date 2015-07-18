@@ -167,11 +167,13 @@ class anime
 
 	public function googl($type,$id)
 	{
+		$googl = getgoogl("http://localhost/anime/?halaman=detail_kategori&kategori_id=".$id);
 		$query = "UPDATE `{$type}` SET
-					`short_link` = 'http://goo.gl/WmftUV'
+					`short_link` = :googl
 					WHERE `id` = :id";
 		$this->obj->query($query);
 		$this->obj->bind(':id',$id);
+		$this->obj->bind(':googl',$googl);
 		$this->obj->execute();
 
 	}

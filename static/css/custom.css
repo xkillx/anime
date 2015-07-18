@@ -4,7 +4,12 @@
   font-weight: normal;
   src: local('fira'), url('static/font/fira-sans/FiraSans-Regular.otf') format('truetype');
 }
-body { padding-top: 40px; font-family: fira;}
+body { 
+  padding-top: 40px; 
+  font-family: fira;
+  background: rgb(220, 222, 227) none repeat scroll 0% 0%;
+  font-size: 12px;
+}
 *{
   -webkit-border-radius: 0 !important;
      -moz-border-radius: 0 !important;
@@ -46,4 +51,10 @@ span#sizing-addon2{
 }
 .navbar {
     min-height: 0;
+}
+.bg-white{
+  background: #fff;
+}
+.select2-container {
+    width: 100%;
 }

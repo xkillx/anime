@@ -64,20 +64,20 @@ class DB{
     }
     public function rowCount(){
     return $this->stmt->rowCount();
+    }
+    public function beginTransaction(){
+        return $this->dbh->beginTransaction();
+    }
+    public function endTransaction(){
+        return $this->dbh->commit();
+    }
+    public function cancelTransaction(){
+        return $this->dbh->rollBack();
+    }
+    public function lastInsertId(){
+        return $this->dbh->lastInsertId();
+    }
+    public function debugDumpParams(){
+        return $this->stmt->debugDumpParams();
+    }
 }
-public function beginTransaction(){
-    return $this->dbh->beginTransaction();
-}
-public function endTransaction(){
-    return $this->dbh->commit();
-}
-public function cancelTransaction(){
-    return $this->dbh->rollBack();
-}
-public function lastInsertId(){
-    return $this->dbh->lastInsertId();
-}
-public function debugDumpParams(){
-    return $this->stmt->debugDumpParams();
-}
-  }

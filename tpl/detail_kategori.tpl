@@ -1,8 +1,8 @@
 <?php
 global $anime;
 global $kategori_id;
-$detail = $anime->kategoriDetail($kategori_id);
-$listEpisodes = $anime->semuaEpisode($kategori_id);
+$detail 		= $anime->kategoriDetail($kategori_id);
+$listEpisodes 	= $anime->semuaEpisode($kategori_id);
 ?>
 <div class="row">
 	<div class="col-sm-3">
@@ -94,7 +94,7 @@ $listEpisodes = $anime->semuaEpisode($kategori_id);
 		<!-- -->
 
 	</div>
-	<div class="col-sm-9">
+	<div class="col-sm-9 bg-white">
 	<h4><i class="glyphicon glyphicon-bookmark"></i> <?php echo $detail->judul;?></h4>
 	<hr>
 		<div>
@@ -104,13 +104,14 @@ $listEpisodes = $anime->semuaEpisode($kategori_id);
     <li role="presentation" class="active"><a href="#details" aria-controls="details" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-info-sign"></i> Details</a></li>
     <li role="presentation"><a href="#Episodes" aria-controls="Episodes" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-list"></i> Episodes</a></li>
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-comment"></i> Messages</a></li>
-    <li role="presentation"><a href="#ChangesLog" aria-controls="ChangesLog" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-list-alt"></i> ChangesLog</a></li>
+    <li role="presentation"><a href="#ChangesLog" aria-controls="ChangesLog" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-list-alt"></i> ReportLog</a></li>
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="details">
-<?php echo $detail->keterangan;?>
+	<?php echo $detail->keterangan;?>
+	<div class="clearfix" style="height:20px;"></div>
     </div>
     <div role="tabpanel" class="tab-pane" id="Episodes">
     	<table class="table table-striped table-bordered  table-condensed">
@@ -134,7 +135,7 @@ $listEpisodes = $anime->semuaEpisode($kategori_id);
     				<td><?php echo $episode->kualitas;?></td>
     				<td><?php echo $episode->size;?></td>
     				<td><?php echo $episode->source;?></td>
-    				<td><a href="<?php echo $episode->mirror;?>" class="external">Download</a></td>
+    				<td><a href="./l.php?u=<?php echo $episode->mirror;?>&episode_id=<?php echo $episode->id;?>" class="external">Download</a></td>
     				<td><?php echo $episode->password;?></td>
     				<td><a href="">Broken Link?</a></td>
     			</tr>
@@ -155,9 +156,32 @@ $listEpisodes = $anime->semuaEpisode($kategori_id);
     <!-- messages -->
     <!-- changeslog -->
     <div role="tabpanel" class="tab-pane" id="ChangesLog">
-    	<div class="alert alert-warning">
-    	<strong>INFO</strong> Comming Soon
-    	</div>
+    	<table class="table table-striped table-bordered  table-condensed">
+    		<thead>
+    			<tr>
+    				<th>Episode</th>
+    				<th>Status</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>Episode 1</td>
+    				<td>Draft</td>
+    			</tr>
+    			<tr>
+    				<td>Episode 2</td>
+    				<td>Pending</td>
+    			</tr>
+    			<tr>
+    				<td>Episode 3</td>
+    				<td>Uploading</td>
+    			</tr>
+    			<tr>
+    				<td>Episode 4</td>
+    				<td>Fixed</td>
+    			</tr>
+    		</tbody>
+    	</table>
     </div>
   </div>
   <!-- changeslog -->

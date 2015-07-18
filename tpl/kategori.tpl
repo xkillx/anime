@@ -12,7 +12,7 @@ $pagination->setTotal($anime->totalKategori());
 	</div>
 </div>
 <div class="clearfix" style="height:20px;"></div>
-<table class="table table-hover table-condensed table-bordered table-striped">
+<table class="table table-hover table-condensed table-bordered table-striped bg-white">
 	<head>
 		<tr>
 			<th>Judul</th>
@@ -34,7 +34,7 @@ $seoname = preg_replace('/[\-]+$/','',$seoname); // // Strip off the ending hyph
 $seoname = strtolower($seoname);
 ?>
 	<tr>
-		<td><a href="./?halaman=detail_kategori&kategori_id=<?php echo $item->id;?>&kategori_judul=<?php echo $seoname;?>&short=<?php echo getgoogl("http://localhost/anime/?halaman=detail_kategori&kategori_id={$item->id}&kategori_judul={$seoname}");?>"><?php echo $item->judul;?></a></td>
+		<td><a href="./?halaman=detail_kategori&kategori_id=<?php echo $item->id;?>&kategori_judul=<?php echo $seoname;?>"><?php echo $item->judul;?></a></td>
 		<td><?php echo $item->year;?></td>
 		<td>
 		<?php 

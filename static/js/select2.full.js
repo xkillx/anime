@@ -4916,7 +4916,7 @@ S2.define('select2/core',[
 
       return this._resolveWidth($element, 'element');
     }
-
+/*
     if (method == 'element') {
       var elementWidth = $element.outerWidth(false);
 
@@ -4926,7 +4926,7 @@ S2.define('select2/core',[
 
       return elementWidth + 'px';
     }
-
+*/
     if (method == 'style') {
       var style = $element.attr('style');
 
