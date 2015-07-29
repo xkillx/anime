@@ -1,4 +1,9 @@
-<!DOCTYPE html><?php global $session_group;global $pengguna_id;global $pengguna;?>
+<?php 
+global $session_group;
+global $pengguna_id;
+global $pengguna;
+global $pengaturan;
+?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,10 +13,10 @@
     <title>Anime Directory</title>
 
     <!-- Bootstrap -->
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
-<link href="static/css/select2.min.css" type="text/css" rel="stylesheet" />
-    <link href="static/css/font-awesome.min.css" rel="stylesheet">
-    <link href="static/css/custom.css" rel="stylesheet">
+    <link href="<?php echo $pengaturan->site_url();?>/static/css/bootstrap.min.css" rel="stylesheet">
+<link href="<?php echo $pengaturan->site_url();?>/static/css/select2.min.css" type="text/css" rel="stylesheet" />
+    <link href="<?php echo $pengaturan->site_url();?>/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo $pengaturan->site_url();?>/static/css/custom.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,17 +38,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="./?"><i class="glyphicon glyphicon-folder-open"></i> AnimeDirectory <sup>Beta .1</sup></a>
+      <a class="navbar-brand" href="<?php echo $pengaturan->site_url();?>/"><i class="glyphicon glyphicon-folder-open"></i> <?php echo $pengaturan->site_name();?> <sup>Beta .1</sup></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="./?halaman=kategori">Anime Lists</a></li>
-        <li><a href="./?halaman=tentang">Tentang</a></li>
-        <li><a href="./?halaman=team">Team</a></li>
-        <li><a href="./?halaman=disclaimer">Disclaimer</a></li>
-        <li><a href="./?halaman=tos">TOS</a></li>
+        <li><a href="<?php echo $pengaturan->site_url();?>/kategori">Lists</a></li>
+        <li><a href="<?php echo $pengaturan->site_url();?>/tentang">Tentang</a></li>
+        <li><a href="<?php echo $pengaturan->site_url();?>/team">Team</a></li>
+        <li><a href="<?php echo $pengaturan->site_url();?>/disclaimer">Disclaimer</a></li>
+        <li><a href="<?php echo $pengaturan->site_url();?>/tos">TOS</a></li>
 
       </ul>
 
@@ -52,8 +57,8 @@
 
       
         <?php if($session_group == 2):?>
-        <li><a href="./?halaman=login">Masuk</a></li>
-        <li><a href="./?halaman=register">Daftar</a></li>
+        <li><a href="<?php echo $pengaturan->site_url();?>/login">Masuk</a></li>
+        <li><a href="<?php echo $pengaturan->site_url();?>/register">Daftar</a></li>
         <?php endif;?>
 
 
@@ -61,8 +66,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $pengguna->penggunaName($pengguna_id);?> <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="./?halaman=profile">Profile</a></li>
-            <li><a href="./logout.php">Keluar</a></li>
+            <li><a href="<?php echo $pengaturan->site_url();?>/profile">Profile</a></li>
+            <li><a href="<?php echo $pengaturan->site_url();?>/logout.php">Keluar</a></li>
           </ul>
         </li>
         <?php endif;?>

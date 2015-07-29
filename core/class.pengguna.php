@@ -12,6 +12,13 @@ class pengguna
 		$this->obj 	=	$obj;
 	}
 
+	public function site_url()
+	{
+		$pengaturan		=	new pengaturan($this->obj);
+		$site_url = $pengaturan->site_url() . "/";
+		return $site_url;
+	}
+
 	public function tambah_pengguna($post)
 	{
 		$username = $post['username'];
@@ -29,7 +36,7 @@ class pengguna
 		$this->obj->bind(':username',$username);
 		$this->obj->bind(':password',$password);
 		$this->obj->execute();
-		header("Location: ./?halaman=login");
+		header("Location: {$this->site_url()}login");
 	}
 
 	public function cek_pengguna($post)
@@ -47,7 +54,7 @@ class pengguna
 	public function valid_pengguna($post)
 	{
 		if($this->cek_pengguna($post) <= 0):
-			header("Location:./?halaman=register");
+			header("Location:{$this->site_url()}register");
 		else:
 			$username = $post['username'];
 			$password = $post['password'];
@@ -60,7 +67,7 @@ class pengguna
 			if($hash == 1):
 				$_SESSION['group'] 			= $datas->group;
 				$_SESSION['pengguna_id'] 	= $datas->id;
-				header("Location: ./?halaman=profile");
+				header("Location: {$this->site_url()}profile");
 			else:
 				echo "
 					<div class=\"alert alert-warning\"> Username/Password yang anda masukan salah. silakan <a href=\"./?halaman=login\">login</a> kembali</div>

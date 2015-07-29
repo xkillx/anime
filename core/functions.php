@@ -31,3 +31,17 @@ curl_close($curlObj);
 return $json->id;
  
 }
+
+
+function seo($realname)
+{	
+	$seoname = preg_replace('/\%/',' percentage',$realname);
+	$seoname = preg_replace('/\@/',' at ',$seoname);
+	$seoname = preg_replace('/\&/',' and ',$seoname);
+	$seoname = preg_replace('/\s[\s]+/','-',$seoname);    // Strip off multiple spaces
+	$seoname = preg_replace('/[\s\W]+/','-',$seoname);    // Strip off spaces and non-alpha-numeric
+	$seoname = preg_replace('/^[\-]+/','',$seoname); // Strip off the starting hyphens
+	$seoname = preg_replace('/[\-]+$/','',$seoname); // // Strip off the ending hyphens
+	$seoname = strtolower($seoname);
+	return $seoname;
+}

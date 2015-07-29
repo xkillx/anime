@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?halaman=$1
+RewriteRule ^([a-zA-Z0-9_-]+)/$ index.php?halaman=$1
+
+
+
+RewriteRule ^([a-zA-Z0-9_-]+)/page/([0-9]+)$ index.php?halaman=$1&page=$2
+RewriteRule ^([a-zA-Z0-9_-]+)/page/([0-9]+)/$ index.php?halaman=$1&page=$2
+
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)/([a-zA-Z0-9_-]+)$ index.php?halaman=$1&kategori_id=$2&kategori_judul=$3
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)/([a-zA-Z0-9_-]+)/$ index.php?halaman=$1&kategori_id=$2&kategori_judul=$3

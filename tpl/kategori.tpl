@@ -2,6 +2,7 @@
 global $page;
 global $anime;
 global $pagination;
+global $pengaturan;
 $listCategories = $anime->listCategories($page);
 $pagination->setCurrent($page);
 $pagination->setTotal($anime->totalKategori());
@@ -23,18 +24,9 @@ $pagination->setTotal($anime->totalKategori());
 	<tbody>
 <?php
 foreach ($listCategories as $item):
-$realname = $item->judul; 
-$seoname = preg_replace('/\%/',' percentage',$realname);
-$seoname = preg_replace('/\@/',' at ',$seoname);
-$seoname = preg_replace('/\&/',' and ',$seoname);
-$seoname = preg_replace('/\s[\s]+/','-',$seoname);    // Strip off multiple spaces
-$seoname = preg_replace('/[\s\W]+/','-',$seoname);    // Strip off spaces and non-alpha-numeric
-$seoname = preg_replace('/^[\-]+/','',$seoname); // Strip off the starting hyphens
-$seoname = preg_replace('/[\-]+$/','',$seoname); // // Strip off the ending hyphens
-$seoname = strtolower($seoname);
 ?>
 	<tr>
-		<td><a href="./?halaman=detail_kategori&kategori_id=<?php echo $item->id;?>&kategori_judul=<?php echo $seoname;?>"><?php echo $item->judul;?></a></td>
+		<td><a href="<?php echo $pengaturan->site_url();?>/movie/<?php echo $item->id;?>/<?php echo seo($item->judul);?>"><?php echo $item->judul;?></a></td>
 		<td><?php echo $item->year;?></td>
 		<td>
 		<?php 

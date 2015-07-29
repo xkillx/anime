@@ -8,7 +8,7 @@
   </div>
   <div class="panel-body">
     
-<form method="POST" action="./?halaman=register">
+<form method="POST" action="">
   <div class="form-group">
     <label for="username">Username</label>
     <input type="text" class="form-control" id="username" name="username" placeholder="username">

@@ -21,4 +21,22 @@ class pengaturan
 		return $row->value;
 	}
 
+	public function site_url()
+	{
+		$query = "SELECT * FROM `pengaturan` WHERE `name` = 'site_url'";
+		$this->obj->query($query);
+		$this->obj->execute();
+		$row	=	$this->obj->single();
+		return $row->value;
+	}
+
+	public function site_name()
+	{
+		$query = "SELECT * FROM `pengaturan` WHERE `name` = 'site_name'";
+		$this->obj->query($query);
+		$this->obj->execute();
+		$row	=	$this->obj->single();
+		return $row->value;
+	}
+
 }

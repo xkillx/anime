@@ -12,6 +12,13 @@ class anime
 		$this->obj 	=	$obj;
 	}
 
+	public function site_url()
+	{
+		$pengaturan		=	new pengaturan($this->obj);
+		$site_url = $pengaturan->site_url() . "/";
+		return $site_url;
+	}
+
 	public function tambah_kategori($post)
 	{
 		$judul 		= $post['judul'];
@@ -78,7 +85,7 @@ class anime
 		$this->obj->bind(':indonesian',$indonesian);
 		$this->obj->bind(':hit',$hit);
 		$this->obj->execute();
-		header("Location: ./?halaman=tambah_kategori");
+		header("Location: {$this->site_url()}tambah_kategori");
 	}
 
 	public function kategoriDetail($kategori_id)
@@ -150,8 +157,8 @@ class anime
 		$this->obj->bind(':hit',$hit);
 		$this->obj->execute();
 		$id = $this->obj->lastInsertId();
-		$this->googl("episode",$id);
-		header("Location: ./?halaman=tambah_episode");
+		$this->googl('episode',$mirror,$id);
+		header("Location: {$this->site_url()}tambah_episode");
 	}
 
 	public function semuaEpisode($kategori_id)
@@ -165,9 +172,9 @@ class anime
 	}
 
 
-	public function googl($type,$id)
+	public function googl($type,$mirror,$id)
 	{
-		$googl = getgoogl("http://localhost/anime/?halaman=detail_kategori&kategori_id=".$id);
+		$googl = getgoogl("{$mirror}");
 		$query = "UPDATE `{$type}` SET
 					`short_link` = :googl
 					WHERE `id` = :id";
@@ -207,6 +214,11 @@ class anime
 		$this->obj->execute();
 		$datas		=	$this->obj->resultset();
 		return $datas;
+	}
+
+	public function hit($id)
+	{
+
 	}
 
 }
