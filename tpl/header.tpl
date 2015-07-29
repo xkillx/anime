@@ -12,6 +12,9 @@ global $pengaturan;
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Anime Directory</title>
 
+<link rel="stylesheet" href="http://bxslider.com/lib/jquery.bxslider.css" type="text/css" />
+
+
     <!-- Bootstrap -->
     <link href="<?php echo $pengaturan->site_url();?>/static/css/bootstrap.min.css" rel="stylesheet">
 <link href="<?php echo $pengaturan->site_url();?>/static/css/select2.min.css" type="text/css" rel="stylesheet" />

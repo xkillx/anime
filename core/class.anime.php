@@ -234,4 +234,23 @@ class anime
 		$this->obj->execute();
 	}
 
+
+
+	public function home_cat($limit)
+	{
+		$query = "SELECT * FROM kategori ORDER BY id DESC LIMIT {$limit}";
+		$this->obj->query($query);
+		$rows = $this->obj->resultset();
+		return $rows;
+	}
+
+	public function cat_seo($id)
+	{
+		$query = "SELECT * FROM kategori WHERE id = :id";
+		$this->obj->query($query);
+		$this->obj->bind(':id',$id);
+		$this->obj->execute();
+		$rows = $this->obj->single();
+		return seo($rows->judul);		
+	}
 }

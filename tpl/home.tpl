@@ -1,6 +1,20 @@
+<?php 
+global $anime;
+global $pengaturan;
+?>
 <div class="row">
 	<div class="col-sm-12">
-		<img src="static/img/banner.png" class="img-thumbnail">
+		
+<div class="slider">
+	<ul class="bxslider">
+	<?php foreach($anime->home_cat('12') as $cat):?>
+	  <li><a class="ow" href="<?php echo $pengaturan->site_url();?>/movie/<?php echo $cat->id;?>/<?php echo $anime->cat_seo($cat->id);?>"><img src="<?php echo $cat->cover;?>" class="img-responsive img-thumbnail"/></a></li>
+	 <?php endforeach;?>
+	</ul>
+</div>
+
+
+
 	</div>
 </div>
 <div class="clearfix" style="height:20px;"></div>
