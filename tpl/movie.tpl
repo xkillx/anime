@@ -4,6 +4,7 @@ global $kategori_id;
 global $session_group;
 $detail 		= $anime->kategoriDetail($kategori_id);
 $listEpisodes 	= $anime->semuaEpisode($kategori_id);
+$anime->hit($kategori_id);
 ?>
 <div class="row">
 	<div class="col-sm-3">
