@@ -56,7 +56,7 @@ global $pengaturan;
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><i class="glyphicon glyphicon-bullhorn"></i> Site Update</a></li>
+        <li><a href="<?php echo $pengaturan->site_url();?>/update"><i class="glyphicon glyphicon-bullhorn"></i> Site Update</a></li>
 
       
         <?php if($session_group == 2):?>
