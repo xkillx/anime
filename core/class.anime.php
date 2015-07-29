@@ -218,7 +218,12 @@ class anime
 
 	public function hit($id)
 	{
-
+		$query = "UPDATE `kategori` SET
+					`hit` = `hit` + '1'
+					WHERE `id` = :id";
+		$this->obj->query($query);
+		$this->obj->bind(':id',$id);
+		$this->obj->execute();
 	}
 
 }
