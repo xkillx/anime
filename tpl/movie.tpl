@@ -68,7 +68,7 @@ $anime->hit($kategori_id);
 		  		</tr>
 		  		<tr>
 		  			<td>Episodes</td>
-		  			<td>-</td>
+		  			<td><?php echo $detail->episode;?></td>
 		  		</tr>
 		  		<tr>
 		  			<td>Status</td>
@@ -76,7 +76,7 @@ $anime->hit($kategori_id);
 		  		</tr>
 		  		<tr>
 		  			<td>Aired</td>
-		  			<td>-</td>
+		  			<td><?php echo $detail->aired;?></td>
 		  		</tr>
 		  		<tr>
 		  			<td>Producers</td>

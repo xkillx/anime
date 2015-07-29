@@ -34,6 +34,8 @@ class anime
 		$synonyms 	= $post['synonyms'];
 		$japanese 	= $post['japanese'];
 		$indonesian = $post['indonesian'];
+		$episode 	= $post['episode'];
+		$aired 		= $post['aired'];
 		$hit 		= '1';
 		$query = "INSERT INTO `kategori` 
 		(
@@ -50,7 +52,9 @@ class anime
 			`synonyms`, 
 			`japanese`, 
 			`indonesian`, 
-			`hit`
+			`hit`, 
+			`episode`, 
+			`aired`
 		)
 		VALUES 
 		(
@@ -67,7 +71,9 @@ class anime
 			:synonyms, 
 			:japanese, 
 			:indonesian, 
-			:hit
+			:hit, 
+			:episode, 
+			:aired
 		);";
 		$this->obj->query($query);
 		$this->obj->bind(':judul',$judul);
@@ -84,6 +90,8 @@ class anime
 		$this->obj->bind(':japanese',$japanese);
 		$this->obj->bind(':indonesian',$indonesian);
 		$this->obj->bind(':hit',$hit);
+		$this->obj->bind(':episode',$episode);
+		$this->obj->bind(':aired',$aired);
 		$this->obj->execute();
 		header("Location: {$this->site_url()}tambah_kategori");
 	}
