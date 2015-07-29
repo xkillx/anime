@@ -136,7 +136,7 @@ $anime->hit($kategori_id);
     		<?php foreach ($listEpisodes as $episode):?>
     			<tr>
     				<td><?php echo $episode->title;?></td>
-    				<td><?php echo $episode->date;?></td>
+    				<td><?php echo get_timeago(strtotime($episode->date));?></td>
     				<td><?php echo $episode->kualitas;?></td>
     				<td><?php echo $episode->size;?></td>
     				<td><?php echo $episode->source;?></td>
